@@ -42,6 +42,7 @@ def wa_webhook(request):
         received_at=timezone.now(),
         payload=payload
     )
+    process_request(payload)
     return HttpResponse("Message received okay", status=200)
 
 
