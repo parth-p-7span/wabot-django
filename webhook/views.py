@@ -20,7 +20,7 @@ def wa_webhook(request):
     if 'hub.mode' in params and 'hub.verify_token' in params:
         if compare_digest(params['hub.mode'], 'subscribe') and compare_digest(params['hub.verify_token'], settings.WA_TOKEN):
             print('WEBHOOK VERIFIED')
-            return params['hub.challenge'], 200
+            return HttpResponse(params['hub.challenge'], status=200)
         else:
             return HttpResponseForbidden(
                 "Incorrect Token Passed",
@@ -39,4 +39,4 @@ def wa_webhook(request):
         received_at=timezone.now(),
         payload=payload
     )
-    return HttpResponse("Message received okay")
+    return HttpResponse("Message received okay", status=200)
