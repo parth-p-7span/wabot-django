@@ -16,16 +16,11 @@ from .models import WebhookMessage
 @require_http_methods(['GET', 'POST'])
 @non_atomic_requests
 def wa_webhook(request):
-    print("====> ", request.content_params)
-
-    if 'hub.mode' in request.content_params and 'hub.verify_token' in request.content_params:
-        mode = request.POST.get('hub.mode', '')
-        token = request.POST.get('hub.verify_token', '')
-
-        if compare_digest(mode, 'subscribe') and compare_digest(token, settings.WA_TOKEN):
+    params = request.GET.dict()
+    if 'hub.mode' in params and 'hub.verify_token' in params:
+        if compare_digest(params['hub.mode'], 'subscribe') and compare_digest(params['hub.verify_token'], settings.WA_TOKEN):
             print('WEBHOOK VERIFIED')
-            challenge = request.args.get('hub.challenge')
-            return challenge, 200
+            return params['hub.challenge'], 200
         else:
             return HttpResponseForbidden(
                 "Incorrect Token Passed",
