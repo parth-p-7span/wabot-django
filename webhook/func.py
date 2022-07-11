@@ -31,7 +31,7 @@ def send_selection_msg(to):
 def send_message(message, to):
     res = requests.post(
         url=settings.WA_ENDPOINT,
-        headers=settings.header,
+        headers=settings.WA_HEADER,
         data=json.dumps(
             {
                 "messaging_product": "whatsapp",
