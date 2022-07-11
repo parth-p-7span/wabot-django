@@ -1,8 +1,6 @@
 import datetime as dt
-import json
 from secrets import compare_digest
 
-from django.conf import settings
 from django.db.transaction import atomic, non_atomic_requests
 from django.http import HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
@@ -10,8 +8,8 @@ from django.views.decorators.http import require_http_methods
 from django.utils import timezone
 
 from .models import WebhookMessage
-import func
-from firebase import Firebase
+from .func import *
+from .firebase import Firebase
 
 
 instance = Firebase()
@@ -61,7 +59,7 @@ def process_request(payload):
                 message_id = message_object['id']
                 user_id = message_object['from']
 
-                func.mark_as_read(message_id)
+                mark_as_read(message_id)
 
                 users_data = instance.get_user_data(user_id)
 
@@ -79,7 +77,7 @@ def process_request(payload):
                     # clickup.set_custom_field_value(task_id, constants.mediator_field_id,
                     #                                [constants.custom_field_ids[message_text]])
                     string = "11. Please upload your resume then you are finish with the process."
-                    response = func.send_message(string, message_object['from'])
+                    response = send_message(string, message_object['from'])
                     print(response)
 
                 elif message_type == "document" and last_msg == 10:
@@ -87,7 +85,7 @@ def process_request(payload):
                     doc_id = message_object['document']['id']
                     instance.update_user(user_id, "resume", {"id": doc_id, "name": doc_name})
                     string = "Thank you for applying to 7Span, our HR will contact you shortly."
-                    response = func.send_message(string, message_object['from'])
+                    response = send_message(string, message_object['from'])
                     print(response)
 
                 elif message_type == "text":
@@ -101,7 +99,7 @@ def process_request(payload):
                         #                                message_object['from'])
 
                         string = f"Hi {author_name},\nThankyou for applying in 7Span. I am auto-reply Bot of 7Span. You just have to answer few questions to send your application.\n\n1.Please enter your full name."
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
                         last_msg = -2
 
@@ -110,62 +108,62 @@ def process_request(payload):
                         # clickup.update_task_name(task_id, message_text)
                         # clickup.set_custom_field_value(task_id, constants.name_field_id, message_text)
                         string = "2. Please enter your official email address."
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 1:
                         instance.update_user(user_id, "email", message_text)
                         # clickup.set_custom_field_value(task_id, constants.email_field_id, message_text)
                         string = "3. Please enter your official mobile number."
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 2:
                         instance.update_user(user_id, "mobile", message_text)
                         # clickup.set_custom_field_value(task_id, constants.mobile_field_id, f'+91{message_text}')
                         string = "4. Please enter your skills separated by comma. e.g. React, Laravel, Angular, Python"
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 3:
                         instance.update_user(user_id, "skills", message_text)
                         # clickup.set_custom_field_value(task_id, constants.skills_field_id, message_text)
                         string = "5. Please enter your total years of experience."
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 4:
                         instance.update_user(user_id, "experience", message_text)
                         # clickup.set_custom_field_value(task_id, constants.experience_field_id, message_text)
                         string = "6. Please enter your current/last company name"
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 5:
                         instance.update_user(user_id, "last_company", message_text)
                         # clickup.set_custom_field_value(task_id, constants.last_company_field_id, message_text)
                         string = "7. Please enter your current CTC(Per Annum)"
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 6:
                         instance.update_user(user_id, "ctc", message_text)
                         # clickup.set_custom_field_value(task_id, constants.ctc_field_id, message_text)
                         string = "8. Please enter your current location"
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 7:
                         instance.update_user(user_id, "location", message_text)
                         # clickup.set_custom_field_value(task_id, constants.location_field_id, message_text)
                         string = "9. Please enter little summary about you."
-                        response = func.send_message(string, message_object['from'])
+                        response = send_message(string, message_object['from'])
                         print(response)
 
                     if last_msg == 8:
                         instance.update_user(user_id, "summary", message_text)
                         # clickup.set_custom_field_value(task_id, constants.summary_field_id, message_text)
-                        response = func.send_selection_msg(message_object['from'])
+                        response = send_selection_msg(message_object['from'])
                         print(response)
 
         return 'EVENT_RECEIVED', 200
