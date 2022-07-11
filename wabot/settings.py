@@ -123,4 +123,45 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-WA_TOKEN = "23rf313uf-9du2bbc0-cj382nsd-nc238"
+WA_VERIFY_TOKEN = "23rf313uf-9du2bbc0-cj382nsd-nc238"
+WA_ENDPOINT = 'https://graph.facebook.com/v13.0/106519662119427/messages'
+
+WA_HEADER = {
+    "Authorization": "Bearer EABMCARdnUF8BAOEfJH65AN33b7Lt0i94vtuyWY5hxgmCZCJnfkI84Curp8nYg7HHgTnENme6LMZBAegvBdc4tKOEMZAOM0DtVA4ZBtU9SFuJ2y6rFksN7Hh3sw1PKomtYbsKrpVYLNwCnji2qPSb2yO3q2SDOp5eqRaIf0oKtT9FTyeWDQKHlmhSpOJZBNGPq20AogMOaAiTpOnWBCNbf",
+    "Content-Type": "application/json"
+}
+
+INTERACTIVE_MSG_BODY = {
+    "type": "button",
+    "body": {
+        "text": "10. How did you come to know about 7Span?"
+    },
+    "footer": {
+        "text": "Seven Bot"
+    },
+    "action": {
+        "buttons": [
+            {
+              "type": "reply",
+              "reply": {
+                "id": "1",
+                "title": "Referred by Friend"
+              }
+            },
+            {
+              "type": "reply",
+              "reply": {
+                "id": "2",
+                "title": "Instagram/Facebook"
+              }
+            },
+            {
+              "type": "reply",
+              "reply": {
+                "id": "3",
+                "title": "Other"
+              }
+            },
+          ]
+    }
+}
