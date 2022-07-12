@@ -28,7 +28,8 @@ def send_selection_msg(to):
     return res.json()
 
 
-def send_message(message, to):
+def send_message(to, msg_object):
+
     res = requests.post(
         url=settings.WA_ENDPOINT,
         headers=settings.WA_HEADER,
@@ -36,10 +37,7 @@ def send_message(message, to):
             {
                 "messaging_product": "whatsapp",
                 "to": to,
-                "type": "text",
-                "text": {
-                    "body": message,
-                }
-            }
+                "type": msg_object['type']
+            }.update(msg_object['child'])
         ))
     return res.json()

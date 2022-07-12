@@ -1,5 +1,6 @@
 import firebase_admin
 from firebase_admin import db
+import json
 
 
 class Firebase:
@@ -25,36 +26,20 @@ class Firebase:
     @staticmethod
     def get_user_data(user_id):
         """[name, email, mobile, skills, experience, last_company, ctc, location, summary, platform]"""
+        with open('webhook/actions.json', 'r') as f:
+            actions = json.load(f)
+
+        actions_array = {}
+        for a in actions['steps']:
+            actions_array[a['name']] = 0
+
         ref = db.reference(f'/{user_id}')
         data = ref.get()
-        fields = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
         if isinstance(data, dict):
-            entered_data = data.keys()
-            if "wa_name" in entered_data:
-                fields[0] = 1
-            if "name" in entered_data:
-                fields[1] = 1
-            if "email" in entered_data:
-                fields[2] = 1
-            if "mobile" in entered_data:
-                fields[3] = 1
-            if "skills" in entered_data:
-                fields[4] = 1
-            if "experience" in entered_data:
-                fields[5] = 1
-            if "last_company" in entered_data:
-                fields[6] = 1
-            if "ctc" in entered_data:
-                fields[7] = 1
-            if "location" in entered_data:
-                fields[8] = 1
-            if "summary" in entered_data:
-                fields[9] = 1
-            if "platform" in entered_data:
-                fields[10] = 1
-            if "resume" in entered_data:
-                fields[11] = 1
-        return fields
+            for key in data.keys():
+                actions_array[key] = 1
+        return actions_array
 
     @staticmethod
     def delete_data(user_id):
