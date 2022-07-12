@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'wabot.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ddu7nqdspf3084',
+        'USER': 'oxjtkkuljmomhr',
+        'PASSWORD': '88a427315360031cf15d3009a55bdf4262733fdcda335cc309b4b29b5e6a101e',
+        'HOST': 'ec2-3-219-52-220.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
