@@ -2,7 +2,29 @@
   "steps": [
     {
       "id": "0",
-      "name": "welcome_msg",
+      "name": "starter",
+      "type": "text",
+      "user_input": false,
+      "child": {
+        "text": {
+          "body": "Hey there, This is the first message."
+        }
+      }
+    },
+    {
+      "id": "6",
+      "name": "company_banner",
+      "type": "text",
+      "user_input": false,
+      "child": {
+        "text": {
+          "body": "Hey there, This is the first message."
+        }
+      }
+    },
+    {
+      "id": "7",
+      "name": "bot_msg",
       "type": "text",
       "user_input": false,
       "child": {
@@ -52,6 +74,28 @@
       "child": {
         "text": {
           "body": "Enter your skills."
+        }
+      }
+    },
+    {
+      "id": "8",
+      "name": "test1",
+      "type": "text",
+      "user_input": false,
+      "child": {
+        "text": {
+          "body": "Hey there, This is the first message."
+        }
+      }
+    },
+    {
+      "id": "9",
+      "name": "test2",
+      "type": "text",
+      "user_input": false,
+      "child": {
+        "text": {
+          "body": "Hey there, This is the first message."
         }
       }
     },

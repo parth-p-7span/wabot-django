@@ -25,7 +25,6 @@ class Firebase:
 
     @staticmethod
     def get_user_data(user_id):
-        """[name, email, mobile, skills, experience, last_company, ctc, location, summary, platform]"""
         with open('webhook/actions.json', 'r') as f:
             actions = json.load(f)
 
@@ -33,12 +32,13 @@ class Firebase:
         for a in actions['steps']:
             actions_array[a['name']] = 0
 
-        ref = db.reference(f'/{user_id}')
+        ref = db.reference(f'/{user_id}/state')
         data = ref.get()
 
         if isinstance(data, dict):
             for key in data.keys():
                 actions_array[key] = 1
+
         return actions_array
 
     @staticmethod
