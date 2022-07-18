@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'wabot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ddu7nqdspf3084',
-        'USER': 'oxjtkkuljmomhr',
-        'PASSWORD': '88a427315360031cf15d3009a55bdf4262733fdcda335cc309b4b29b5e6a101e',
-        'HOST': 'ec2-3-219-52-220.compute-1.amazonaws.com',
+        'NAME': 'de5ku51srae4qm',
+        'USER': 'ggcsbnfpfgfvki',
+        'PASSWORD': '681a7ace9f99e828c9f9ba7d4ec87bbb8a9808e2567a89cf2b622f166c6b58d8',
+        'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -131,7 +131,7 @@ WA_VERIFY_TOKEN = "23rf313uf-9du2bbc0-cj382nsd-nc238"
 WA_ENDPOINT = 'https://graph.facebook.com/v13.0/106519662119427/messages'
 
 WA_HEADER = {
-    "Authorization": "Bearer EABMCARdnUF8BAOEfJH65AN33b7Lt0i94vtuyWY5hxgmCZCJnfkI84Curp8nYg7HHgTnENme6LMZBAegvBdc4tKOEMZAOM0DtVA4ZBtU9SFuJ2y6rFksN7Hh3sw1PKomtYbsKrpVYLNwCnji2qPSb2yO3q2SDOp5eqRaIf0oKtT9FTyeWDQKHlmhSpOJZBNGPq20AogMOaAiTpOnWBCNbf",
+    "Authorization": "Bearer EABMCARdnUF8BAAyVqfQJ9JhptLYhAl4zt8pU6MhRMANK7MVObJvEUQIHwA1PN5zRigCpKG56Ki0xgSkCcOnZB9PQVU5jyWDDnAQzW5GuQj09VukPZAlQ2PZCsMmNb9RmZAd88HJkmaY9bUHO1jSp6TUDljljPeEO7iBEdkDfEyeun0x0FHFtlZBufB0Xk1pp0kVyJd0MdvrN47WR9usxN",
     "Content-Type": "application/json"
 }
 

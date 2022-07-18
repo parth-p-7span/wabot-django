@@ -34,7 +34,7 @@ def wa_webhook(request):
             )
 
     WebhookMessage.objects.filter(
-        received_at__lte=timezone.now() - dt.timedelta(days=3)
+        received_at__lte=timezone.now() - dt.timedelta(days=1)
     ).delete()
 
     payload = json.loads(request.body)
