@@ -39,5 +39,6 @@ def send_message(to, msg_object):
         headers=settings.WA_HEADER,
         data=json.dumps(
             temp
-        ),)
+        ))
+    print(res.json())
     return res.json()

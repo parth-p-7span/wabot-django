@@ -105,12 +105,13 @@
       "type": "interactive",
       "user_input": true,
       "child": {
+        "interactive": {
           "type": "button",
           "body": {
-              "text": "10. How did you come to know about 7Span?"
+            "text": "10. How did you come to know about 7Span?"
           },
           "footer": {
-              "text": "Seven Bot"
+            "text": "Seven Bot"
           },
           "action": {
             "buttons": [
@@ -136,6 +137,7 @@
                 }
               }
             ]
+          }
         }
       }
     }

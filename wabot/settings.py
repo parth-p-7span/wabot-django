@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-dbplkcj7l9huvdpvsmk^un(vcu8r)_l5=k=td5fk*vy0xprtmo
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -70,7 +68,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wabot.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -84,7 +81,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -104,7 +100,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -115,7 +110,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -133,39 +127,4 @@ WA_ENDPOINT = 'https://graph.facebook.com/v13.0/106519662119427/messages'
 WA_HEADER = {
     "Authorization": "Bearer EABMCARdnUF8BAAyVqfQJ9JhptLYhAl4zt8pU6MhRMANK7MVObJvEUQIHwA1PN5zRigCpKG56Ki0xgSkCcOnZB9PQVU5jyWDDnAQzW5GuQj09VukPZAlQ2PZCsMmNb9RmZAd88HJkmaY9bUHO1jSp6TUDljljPeEO7iBEdkDfEyeun0x0FHFtlZBufB0Xk1pp0kVyJd0MdvrN47WR9usxN",
     "Content-Type": "application/json"
-}
-
-INTERACTIVE_MSG_BODY = {
-    "type": "button",
-    "body": {
-        "text": "10. How did you come to know about 7Span?"
-    },
-    "footer": {
-        "text": "Seven Bot"
-    },
-    "action": {
-        "buttons": [
-            {
-              "type": "reply",
-              "reply": {
-                "id": "1",
-                "title": "Referred by Friend"
-              }
-            },
-            {
-              "type": "reply",
-              "reply": {
-                "id": "2",
-                "title": "Instagram/Facebook"
-              }
-            },
-            {
-              "type": "reply",
-              "reply": {
-                "id": "3",
-                "title": "Other"
-              }
-            },
-          ]
-    }
 }
