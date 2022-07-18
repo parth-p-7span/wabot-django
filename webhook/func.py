@@ -29,15 +29,15 @@ def send_selection_msg(to):
 
 
 def send_message(to, msg_object):
-
+    temp = {**{
+        "messaging_product": "whatsapp",
+        "to": to,
+        "type": msg_object['type']
+    }, **msg_object['child']}
     res = requests.post(
         url=settings.WA_ENDPOINT,
         headers=settings.WA_HEADER,
         data=json.dumps(
-            {
-                "messaging_product": "whatsapp",
-                "to": to,
-                "type": msg_object['type']
-            }.update(msg_object['child'])
-        ))
+            temp
+        ),)
     return res.json()

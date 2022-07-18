@@ -1,7 +1,7 @@
-a = {'starter': 1, 'company_banner': 1, 'bot_msg': 1, 'name': 1, 'email': 1, 'mobile': 1, 'skills': 1, 'test1': 1, 'test2': 1, 'mediator': 1}
+c = {**{"a":1, "b":2, "c":3}, **{
+        "text": {
+          "body": "Enter your name."
+        }
+      }}
 
-print(a)
-
-a['end'] = 0
-
-print(a)
+print(c)

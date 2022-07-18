@@ -44,25 +44,22 @@ def wa_webhook(request):
 
         # print("payload ==> ", payload)
 
-        # process_request(payload)
-        # return HttpResponse("Message received okay", status=200)
-        if not WebhookMessage.objects.filter(message_id=message_id):
-            WebhookMessage.objects.create(
-                message_id=message_id,
-                received_at=timezone.now(),
-                payload=payload
-            )
-            process_request(payload)
-            return HttpResponse("Message received okay", status=200)
-        else:
-            return HttpResponseForbidden(
-                "Message already received",
-                content_type='text/plain'
-            )
-    except 'messages':
-        pass
+        process_request(payload)
+        return HttpResponse("Message received okay", status=200)
+        # if not WebhookMessage.objects.filter(message_id=message_id):
+        #     WebhookMessage.objects.create(
+        #         message_id=message_id,
+        #         received_at=timezone.now(),
+        #         payload=payload
+        #     )
+        #     process_request(payload)
+        #     return HttpResponse("Message received okay", status=200)
+        # else:
+        #     return HttpResponseForbidden(
+        #         "Message already received",
+        #         content_type='text/plain'
+        #     )
     except Exception as e:
-        print("EXCEPTION ===> ", e)
         return HttpResponseForbidden(
             "Something went wrong",
             content_type='text/plain'
