@@ -10,6 +10,7 @@ from django.utils import timezone
 from .models import WebhookMessage
 from .func import *
 from .firebase import Firebase
+from .input_validator import *
 
 instance = Firebase()
 
@@ -40,25 +41,25 @@ def wa_webhook(request):
     payload = json.loads(request.body)
 
     try:
-        message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
 
         # print("payload ==> ", payload)
 
-        # process_request(payload)
-        # return HttpResponse("Message received okay", status=200)
-        if not WebhookMessage.objects.filter(message_id=message_id):
-            WebhookMessage.objects.create(
-                message_id=message_id,
-                received_at=timezone.now(),
-                payload=payload
-            )
-            process_request(payload)
-            return HttpResponse("Message received okay", status=200)
-        else:
-            return HttpResponseForbidden(
-                "Message already received",
-                content_type='text/plain'
-            )
+        message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
+        process_request(payload)
+        return HttpResponse("Message received okay", status=200)
+    # if not WebhookMessage.objects.filter(message_id=message_id):
+    #     WebhookMessage.objects.create(
+    #         message_id=message_id,
+    #         received_at=timezone.now(),
+    #         payload=payload
+    #     )
+    #     process_request(payload)
+    #     return HttpResponse("Message received okay", status=200)
+    # else:
+    #     return HttpResponseForbidden(
+    #         "Message already received",
+    #         content_type='text/plain'
+    #     )
     except Exception as e:
         return HttpResponseForbidden(
             "Something went wrong",
@@ -67,7 +68,7 @@ def wa_webhook(request):
 
 
 @atomic
-def process_request(payload, is_recursive=False, field_name=""):
+def process_request(payload, is_recursive=False, field_name="", input_type=""):
     if 'object' in payload and payload['object'] == 'whatsapp_business_account':
 
         message_value = payload['entry'][0]['changes'][0]['value']
@@ -111,18 +112,42 @@ def process_request(payload, is_recursive=False, field_name=""):
                     return
                 if not msg_action['user_input']:
                     if last_msg_action['user_input']:
-                        print("===> ", last_msg_action['name'])
-                        instance.update_user(f'{user_id}', last_msg_action['name'], message_text)
+                        print("===> ", last_msg_action['name'], "===", last_msg_action['expected'])
+                        if verify_data(last_msg_action['expected'], message_text):
+                            instance.update_user(f'{user_id}', last_msg_action['name'], message_text)
+                        else:
+                            send_validation_error(user_id)
+                            return
                     send_message(user_id, msg_action)
                     instance.update_user(f'{user_id}/state', msg_action['name'], "sent")
                     temp_name = msg_action['name'] if msg_action['name'] != "starter" else ""
-                    process_request(payload, is_recursive=True, field_name=temp_name)
+                    try:
+                        temp_expected = msg_action['expected']
+                    except:
+                        temp_expected = ""
+                    process_request(payload, is_recursive=True, field_name=temp_name, input_type=temp_expected)
                 else:
-                    send_message(user_id, msg_action)
-                    instance.update_user(f'{user_id}/state', msg_action['name'], "sent")
                     if not is_recursive:
                         temp_name = last_msg_action['name'] if field_name == "" else field_name
-                        print("==> ", temp_name)
-                        instance.update_user(f'{user_id}', temp_name, message_text)
-                    # print(instance.get_user_data(user_id))
+                        temp_expected = last_msg_action['expected'] if input_type == "" else input_type
+
+                        print("==> ", temp_name, "===", temp_expected)
+                        if verify_data(temp_expected, message_text):
+                            instance.update_user(f'{user_id}', temp_name, message_text)
+                        else:
+                            send_validation_error(user_id)
+                            return
+
+                    send_message(user_id, msg_action)
+                    instance.update_user(f'{user_id}/state', msg_action['name'], "sent")
         return 'EVENT_RECEIVED', 200
+
+
+def verify_data(expected, data):
+    if expected == "text" or expected == "interactive":
+        return True
+    if expected == "email":
+        return verify_email(data)
+    if expected == "mobile":
+        return verify_mobile(data)
+    return False

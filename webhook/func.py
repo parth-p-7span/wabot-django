@@ -42,3 +42,19 @@ def send_message(to, msg_object):
         ))
     print(res.json())
     return res.json()
+
+
+def send_validation_error(to):
+    res = requests.post(
+        url=settings.WA_ENDPOINT,
+        headers=settings.WA_HEADER,
+        data=json.dumps({
+            "messaging_product": "whatsapp",
+            "to": to,
+            "type": "text",
+            "text": {
+                "body": "I'm afraid I didn't understand, could you try again, please?"
+            }
+        })
+    )
+    return res.json()

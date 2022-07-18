@@ -37,6 +37,7 @@
       "id": "1",
       "name": "name",
       "type": "text",
+      "expected": "text",
       "user_input": true,
       "child": {
         "text": {
@@ -48,6 +49,7 @@
       "id": "2",
       "name": "email",
       "type": "text",
+      "expected": "email",
       "user_input": true,
       "child": {
         "text": {
@@ -59,6 +61,7 @@
       "id": "3",
       "name": "mobile",
       "type": "text",
+      "expected": "mobile",
       "user_input": true,
       "child": {
         "text": {
@@ -70,6 +73,7 @@
       "id": "4",
       "name": "skills",
       "type": "text",
+      "expected": "text",
       "user_input": true,
       "child": {
         "text": {

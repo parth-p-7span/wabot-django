@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webhook/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/actions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webhook/func.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/func.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/input_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/input_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,9 +137,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.input_validator" />
         <item itemvalue="Python.tmep" />
         <item itemvalue="Python.views" />
-        <item itemvalue="Python.input_validator" />
       </list>
     </recent_temporary>
   </component>
