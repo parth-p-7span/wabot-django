@@ -126,6 +126,6 @@ WA_VERIFY_TOKEN = "23rf313uf-9du2bbc0-cj382nsd-nc238"
 WA_ENDPOINT = 'https://graph.facebook.com/v13.0/106519662119427/messages'
 
 WA_HEADER = {
-    "Authorization": "Bearer EABMCARdnUF8BAEGaVscZCErQAoFfHVXfo11ZB4QoSaQIsjaENfVQGjlN8uBxGjMrDdpmEj4ZB8xW0eTGZCxoIYvYn8sqDubV9c20W751cL10e0UHzXyUeCHZCfKsWsi9geBPZBuejuiZB1cRWBjv1zlsVwsxivsBy3JEfZC2RwFTk8dN32tZBT3BZCEcBZAr7JUhNroYjOWO0NPYq13z1SjJVAq",
+    "Authorization": "Bearer EAAZAM6cXHtlwBAGNhrnNVuEmywrAGQxyQiiTZBp8PAscZBIGcveeD39RU7oHwp0rPpntzZBgIi5b7pT2SBrZBHaaFgZCWH3DnvzGdB6V0ujWZBrH1jA01ZC37zkv8JdcUQZBjiTjCww0LlnjMiysXapbZAI5bX4x5zHTNNdNi1DhvD70HAkhJ2YOAZAIsIsydduOTYEb9hzhqMYkQZDZD",
     "Content-Type": "application/json"
 }
