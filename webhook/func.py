@@ -40,7 +40,6 @@ def send_message(to, msg_object):
         data=json.dumps(
             temp
         ))
-    print(res.json())
     return res.json()
 
 

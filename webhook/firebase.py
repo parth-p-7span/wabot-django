@@ -6,7 +6,8 @@ import json
 class Firebase:
     def __init__(self):
         database_url = "https://wa-bot-4eb4a-default-rtdb.asia-southeast1.firebasedatabase.app/"
-        cred_obj = firebase_admin.credentials.Certificate('./webhook/wa-bot-4eb4a-firebase-adminsdk-foyvr-96dbd6de2b.json')
+        cred_obj = firebase_admin.credentials.Certificate(
+            './webhook/wa-bot-4eb4a-firebase-adminsdk-foyvr-96dbd6de2b.json')
         default_app = firebase_admin.initialize_app(cred_obj, {
             'databaseURL': database_url
         })
@@ -46,3 +47,14 @@ class Firebase:
         ref = db.reference(f'/{user_id}')
         res = ref.delete()
         return res
+
+    @staticmethod
+    def update_state(user_id, state, action_type):
+        ref = db.reference(f'/{user_id}/state')
+        res = ref.update({'state': state, 'action_type': action_type})
+        return res
+
+    @staticmethod
+    def get_state(user_id):
+        ref = db.reference(f'/{user_id}/state')
+        return ref.get()

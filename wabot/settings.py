@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webhook.apps.WebhookConfig'
+    'webhook.apps.WebhookConfig',
+    'webhook2.apps.Webhook2Config'
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,6 @@ WA_VERIFY_TOKEN = "23rf313uf-9du2bbc0-cj382nsd-nc238"
 WA_ENDPOINT = 'https://graph.facebook.com/v13.0/106519662119427/messages'
 
 WA_HEADER = {
-    "Authorization": "Bearer EABMCARdnUF8BAAyVqfQJ9JhptLYhAl4zt8pU6MhRMANK7MVObJvEUQIHwA1PN5zRigCpKG56Ki0xgSkCcOnZB9PQVU5jyWDDnAQzW5GuQj09VukPZAlQ2PZCsMmNb9RmZAd88HJkmaY9bUHO1jSp6TUDljljPeEO7iBEdkDfEyeun0x0FHFtlZBufB0Xk1pp0kVyJd0MdvrN47WR9usxN",
+    "Authorization": "Bearer EABMCARdnUF8BAEGaVscZCErQAoFfHVXfo11ZB4QoSaQIsjaENfVQGjlN8uBxGjMrDdpmEj4ZB8xW0eTGZCxoIYvYn8sqDubV9c20W751cL10e0UHzXyUeCHZCfKsWsi9geBPZBuejuiZB1cRWBjv1zlsVwsxivsBy3JEfZC2RwFTk8dN32tZBT3BZCEcBZAr7JUhNroYjOWO0NPYq13z1SjJVAq",
     "Content-Type": "application/json"
 }

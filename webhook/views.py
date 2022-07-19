@@ -12,10 +12,12 @@ from .func import *
 from .firebase import Firebase
 from .input_validator import *
 
-instance = Firebase()
 
-with open('webhook/actions.json', 'r') as f:
-    actions = json.load(f)
+#
+# instance = Firebase()
+#
+# with open('webhook/actions.json', 'r') as f:
+#     actions = json.load(f)
 
 
 @csrf_exempt
@@ -46,20 +48,20 @@ def wa_webhook(request):
 
         message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
         # process_request(payload)
-        # return HttpResponse("Message received okay", status=200)
-        if not WebhookMessage.objects.filter(message_id=message_id):
-            WebhookMessage.objects.create(
-                message_id=message_id,
-                received_at=timezone.now(),
-                payload=payload
-            )
-            process_request(payload)
-            return HttpResponse("Message received okay", status=200)
-        else:
-            return HttpResponseForbidden(
-                "Message already received",
-                content_type='text/plain'
-            )
+        return HttpResponse("Message received okay", status=200)
+        # if not WebhookMessage.objects.filter(message_id=message_id):
+        #     WebhookMessage.objects.create(
+        #         message_id=message_id,
+        #         received_at=timezone.now(),
+        #         payload=payload
+        #     )
+        #     process_request(payload)
+        #     return HttpResponse("Message received okay", status=200)
+        # else:
+        #     return HttpResponseForbidden(
+        #         "Message already received",
+        #         content_type='text/plain'
+        #     )
     except Exception as e:
         return HttpResponseForbidden(
             "Something went wrong",
@@ -67,80 +69,80 @@ def wa_webhook(request):
         )
 
 
-@atomic
-def process_request(payload, is_recursive=False, field_name="", input_type=""):
-    if 'object' in payload and payload['object'] == 'whatsapp_business_account':
-
-        message_value = payload['entry'][0]['changes'][0]['value']
-        message_product = message_value['messaging_product']
-        if message_product == 'whatsapp':
-            if 'messages' in message_value:
-                author_name = message_value['contacts'][0]['profile']['name']
-                message_object = message_value['messages'][0]
-                message_type = message_object['type']
-                message_id = message_object['id']
-                user_id = message_object['from']
-
-                mark_as_read(message_id)
-
-                users_data = instance.get_user_data(user_id)
-
-                msg_to_send = -1
-                for i, (key, value) in enumerate(users_data.items()):
-                    if value == 0:
-                        msg_to_send = i
-                        break
-
-                print("-------->", users_data, "-----", msg_to_send)
-                msg_action = actions['steps'][msg_to_send]
-                last_msg_action = actions['steps'][msg_to_send - 1] if msg_to_send != 0 else actions['steps'][
-                    msg_to_send]
-
-                message_text = ""
-                if message_type == "text":
-                    message_text = message_object['text']['body']
-                elif message_type == "interactive":
-                    message_text = message_object['interactive']['button_reply']['title']
-                elif message_type == "media":
-                    message_text = {
-                        "id": message_object['document']['id'],
-                        "name": message_object['document']['filename']
-                    }
-
-                if msg_to_send == -1:
-                    instance.update_user(f'{user_id}', msg_action['name'], message_text)
-                    return
-                if not msg_action['user_input']:
-                    if last_msg_action['user_input']:
-                        print("===> ", last_msg_action['name'], "===", last_msg_action['expected'])
-                        if verify_data(last_msg_action['expected'], message_text):
-                            instance.update_user(f'{user_id}', last_msg_action['name'], message_text)
-                        else:
-                            send_validation_error(user_id)
-                            return
-                    send_message(user_id, msg_action)
-                    instance.update_user(f'{user_id}/state', msg_action['name'], "sent")
-                    temp_name = msg_action['name'] if msg_action['name'] != "starter" else ""
-                    try:
-                        temp_expected = msg_action['expected']
-                    except:
-                        temp_expected = ""
-                    process_request(payload, is_recursive=True, field_name=temp_name, input_type=temp_expected)
-                else:
-                    if not is_recursive:
-                        temp_name = last_msg_action['name'] if field_name == "" else field_name
-                        temp_expected = last_msg_action['expected'] if input_type == "" else input_type
-
-                        print("==> ", temp_name, "===", temp_expected)
-                        if verify_data(temp_expected, message_text):
-                            instance.update_user(f'{user_id}', temp_name, message_text)
-                        else:
-                            send_validation_error(user_id)
-                            return
-
-                    send_message(user_id, msg_action)
-                    instance.update_user(f'{user_id}/state', msg_action['name'], "sent")
-        return 'EVENT_RECEIVED', 200
+# @atomic
+# def process_request(payload, is_recursive=False, field_name="", input_type=""):
+#     if 'object' in payload and payload['object'] == 'whatsapp_business_account':
+#
+#         message_value = payload['entry'][0]['changes'][0]['value']
+#         message_product = message_value['messaging_product']
+#         if message_product == 'whatsapp':
+#             if 'messages' in message_value:
+#                 author_name = message_value['contacts'][0]['profile']['name']
+#                 message_object = message_value['messages'][0]
+#                 message_type = message_object['type']
+#                 message_id = message_object['id']
+#                 user_id = message_object['from']
+#
+#                 mark_as_read(message_id)
+#
+#                 users_data = instance.get_user_data(user_id)
+#
+#                 msg_to_send = -1
+#                 for i, (key, value) in enumerate(users_data.items()):
+#                     if value == 0:
+#                         msg_to_send = i
+#                         break
+#
+#                 print("-------->", users_data, "-----", msg_to_send)
+#                 msg_action = actions['steps'][msg_to_send]
+#                 last_msg_action = actions['steps'][msg_to_send - 1] if msg_to_send != 0 else actions['steps'][
+#                     msg_to_send]
+#
+#                 message_text = ""
+#                 if message_type == "text":
+#                     message_text = message_object['text']['body']
+#                 elif message_type == "interactive":
+#                     message_text = message_object['interactive']['button_reply']['title']
+#                 elif message_type == "media":
+#                     message_text = {
+#                         "id": message_object['document']['id'],
+#                         "name": message_object['document']['filename']
+#                     }
+#
+#                 if msg_to_send == -1:
+#                     instance.update_user(f'{user_id}', msg_action['name'], message_text)
+#                     return
+#                 if not msg_action['user_input']:
+#                     if last_msg_action['user_input']:
+#                         print("===> ", last_msg_action['name'], "===", last_msg_action['expected'])
+#                         if verify_data(last_msg_action['expected'], message_text):
+#                             instance.update_user(f'{user_id}', last_msg_action['name'], message_text)
+#                         else:
+#                             send_validation_error(user_id)
+#                             return
+#                     send_message(user_id, msg_action)
+#                     instance.update_user(f'{user_id}/state', msg_action['name'], "sent")
+#                     temp_name = msg_action['name'] if msg_action['name'] != "starter" else ""
+#                     try:
+#                         temp_expected = msg_action['expected']
+#                     except:
+#                         temp_expected = ""
+#                     process_request(payload, is_recursive=True, field_name=temp_name, input_type=temp_expected)
+#                 else:
+#                     if not is_recursive:
+#                         temp_name = last_msg_action['name'] if field_name == "" else field_name
+#                         temp_expected = last_msg_action['expected'] if input_type == "" else input_type
+#
+#                         print("==> ", temp_name, "===", temp_expected)
+#                         if verify_data(temp_expected, message_text):
+#                             instance.update_user(f'{user_id}', temp_name, message_text)
+#                         else:
+#                             send_validation_error(user_id)
+#                             return
+#
+#                     send_message(user_id, msg_action)
+#                     instance.update_user(f'{user_id}/state', msg_action['name'], "sent")
+#         return 'EVENT_RECEIVED', 200
 
 
 def verify_data(expected, data):

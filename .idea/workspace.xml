@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json">
+      <change afterPath="$PROJECT_DIR$/webhook2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/actions2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webhook2/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/actions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wabot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/firebase.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/firebase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webhook/func.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/func.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/input_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/input_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/tmep.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/tmep.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webhook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,16 +45,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/home/parthpanchal/Documents/Workspace/python/wabot-django/manage.py",
-    "settings.editor.selected.configurable": "actions.on.save"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/parthpanchal/Documents/Workspace/python/wabot-django/manage.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webhook2" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.manage">
     <configuration name="input_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wabot-django" />
@@ -137,8 +153,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.input_validator" />
         <item itemvalue="Python.tmep" />
+        <item itemvalue="Python.input_validator" />
         <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
