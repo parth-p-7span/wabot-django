@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
