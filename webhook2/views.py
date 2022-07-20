@@ -7,7 +7,6 @@ from django.http import HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.utils import timezone
-from django.conf import settings
 
 from webhook.models import WebhookMessage
 from webhook.func import *
@@ -42,9 +41,6 @@ def wa_webhook2(request):
     payload = json.loads(request.body)
 
     try:
-
-        # print("payload ==> ", payload)
-
         message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
         # process_request(payload)
         # return HttpResponse("Message received okay", status=200)
@@ -62,6 +58,7 @@ def wa_webhook2(request):
                 content_type='text/plain'
             )
     except Exception as e:
+        print("Exception == ", e)
         return HttpResponseForbidden(
             "Something went wrong",
             content_type='text/plain'
@@ -145,8 +142,10 @@ def process_request(payload):
                         if action_location[i] == "[":
                             new_action_location = action_location[:i]
                             break
-                    if last_action_object["next"] == "end":
-                        break
+                    print(last_action_object)
+                    if last_action_object != {}:
+                        if last_action_object["next"] == "end":
+                            break
                     action_location = new_action_location + f'["{action_object["next"]}"]'
                     action_object = eval(action_location)
                     print(action_location, action_object)

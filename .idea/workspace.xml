@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json" />
+    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook2/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +46,7 @@
       <recent name="$PROJECT_DIR$/webhook2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.input_validator">
+  <component name="RunManager" selected="Python.manage">
     <configuration name="input_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wabot-django" />
       <option name="INTERPRETER_OPTIONS" value="" />
