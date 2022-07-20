@@ -14,7 +14,7 @@ from webhook.input_validator import *
 
 instance = Firebase()
 
-with open('webhook2/actions2.json', 'r') as f:
+with open('webhook2/actions3.json', 'r') as f:
     actions = json.load(f)
 
 
@@ -113,6 +113,8 @@ def process_request(payload):
                             if last_state[i] == "[":
                                 action_location = last_state[:i]
                                 break
+                        if last_action_object["next"] == "end":
+                            return
                         action_location += f'["{last_action_object["next"]}"]'
                         action_object = eval(action_location)
                     elif users_data['action_type'] == "interactive":
@@ -123,6 +125,8 @@ def process_request(payload):
                                 action_location = last_state[:i]
                                 break
                         response_id = message_object['interactive']['button_reply']['id']
+                        if last_action_object["next"] == "end":
+                            return
                         action_location += f'["{last_action_object["next"][response_id]}"]'
                         action_object = eval(action_location)
 
@@ -140,6 +144,8 @@ def process_request(payload):
                         if action_location[i] == "[":
                             new_action_location = action_location[:i]
                             break
+                    if last_action_object["next"] == "end":
+                        return
                     action_location = new_action_location + f'["{action_object["next"]}"]'
                     action_object = eval(action_location)
                     print(action_location, action_object)
@@ -155,11 +161,12 @@ def verify_data(expected, data):
         return verify_email(data)
     if expected == "mobile":
         return verify_mobile(data)
-    if expected == "number":
-        try:
-            return isinstance(int(data), int)
-        except:
-            return False
+    if expected == "age":
+        return verify_age(data)
     if expected == "media":
-        return True
+        return verify_media(data)
+    if expected == "date":
+        return verify_date(data)
+    if expected == "url":
+        return verify_url(data)
     return False
