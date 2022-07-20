@@ -69,8 +69,8 @@ def wa_webhook2(request):
 
 @atomic
 def process_request(payload):
+    print("Payload ==> ", payload)
     if 'object' in payload and payload['object'] == 'whatsapp_business_account':
-
         message_value = payload['entry'][0]['changes'][0]['value']
         message_product = message_value['messaging_product']
         if message_product == 'whatsapp':
@@ -155,6 +155,7 @@ def process_request(payload):
 
 
 def verify_data(expected, data):
+    print("===>", expected, "===", data)
     if expected == "text" or expected == "interactive":
         return True
     if expected == "email":
