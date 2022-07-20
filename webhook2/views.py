@@ -87,7 +87,7 @@ def process_request(payload):
                     message_text = message_object['text']['body']
                 elif message_type == "interactive":
                     message_text = message_object['interactive']['button_reply']['title']
-                elif message_type == "media":
+                elif message_type == "document":
                     message_text = {
                         "id": message_object['document']['id'],
                         "name": message_object['document']['filename']
