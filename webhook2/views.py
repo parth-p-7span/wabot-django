@@ -171,4 +171,6 @@ def verify_data(expected, data):
         return verify_date(data)
     if expected == "url":
         return verify_url(data)
+    if expected == "float":
+        return verify_float_number(data)
     return False

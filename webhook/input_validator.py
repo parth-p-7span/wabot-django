@@ -48,3 +48,10 @@ def verify_date(date):
     if re.match(pat, date):
         return True
     return False
+
+
+def verify_float_number(data):
+    try:
+        return isinstance(float(data), float)
+    except:
+        return False

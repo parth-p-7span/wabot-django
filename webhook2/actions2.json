@@ -15,7 +15,7 @@
     "user_input": false,
     "child": {
       "text": {
-        "body": "This is the dummy text of company_msg."
+        "body": "I am auto-reply bot developed by 7Span. Please answer the following questions."
       }
     }
   },
@@ -49,20 +49,20 @@
     "user_input": false,
     "child": {
       "text": {
-        "body": "you're doing great."
+        "body": "wow, you're doing great."
       }
     }
   },
   "6": {
     "type": "interactive",
     "user_input": true,
-    "name": "mediator",
+    "name": "user_role",
     "expected": "interactive",
     "child": {
       "interactive": {
         "type": "button",
         "body": {
-          "text": "10. How did you come to know about 7Span?"
+          "text": "What is your current role?"
         },
         "footer": {
           "text": "Seven Bot"
@@ -73,14 +73,14 @@
               "type": "reply",
               "reply": {
                 "id": "1",
-                "title": "Referred by Friend"
+                "title": "Employee"
               }
             },
             {
               "type": "reply",
               "reply": {
                 "id": "2",
-                "title": "Instagram/Facebook"
+                "title": "Student"
               }
             },
             {
@@ -95,18 +95,19 @@
       }
     },
     "next": {
-      "1": "2",
-      "2": "7",
-      "3": ""
+      "1": "7",
+      "2": "10",
+      "3": "100"
     }
   },
   "7": {
     "next": "8",
     "type": "text",
-    "user_input": false,
+    "user_input": true,
+    "expected": "text",
     "child": {
       "text": {
-        "body": "you're doing great."
+        "body": "Nice, can you please enter your company name?"
       }
     }
   },
@@ -114,33 +115,67 @@
     "next": "9",
     "type": "text",
     "user_input": true,
-    "name": "experience",
+    "name": "job_role",
     "expected": "text",
     "child": {
       "text": {
-        "body": "enter your experience."
+        "body": "What is your job role over there?"
       }
     }
   },
   "9": {
-    "next": "10",
+    "next": "100",
     "type": "text",
     "user_input": true,
-    "expected": "number",
+    "expected": "age",
     "name": "age",
     "child": {
       "text": {
-        "body": "Enter your age."
+        "body": "By the way, What's your age?"
       }
     }
   },
   "10": {
+    "next": "11",
+    "type": "text",
+    "user_input": false,
+    "child": {
+      "text": {
+        "body": "Impressive"
+      }
+    }
+  },
+  "11": {
+    "next": "12",
+    "type": "text",
+    "user_input": true,
+    "expected": "text",
+    "name": "institute",
+    "child": {
+      "text": {
+        "body": "Please enter your Institute/University name."
+      }
+    }
+  },
+  "12": {
+    "next": "100",
+    "type": "text",
+    "user_input": true,
+    "expected": "float",
+    "name": "cgpa",
+    "child": {
+      "text": {
+        "body": "What's your CGPA?"
+      }
+    }
+  },
+  "100": {
     "next": "end",
     "type": "text",
     "user_input": false,
     "child": {
       "text": {
-        "body": "thank you."
+        "body": "Okay, thank you for the response buddy. "
       }
     }
   }

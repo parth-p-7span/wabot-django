@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/tmep.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/tmep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/input_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/input_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/actions2.json" beforeDir="false" afterPath="$PROJECT_DIR$/webhook2/actions2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/actions3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook2/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,7 @@
       <recent name="$PROJECT_DIR$/webhook2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tmep">
+  <component name="RunManager" selected="Python.input_validator">
     <configuration name="input_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wabot-django" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,8 +142,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tmep" />
         <item itemvalue="Python.input_validator" />
+        <item itemvalue="Python.tmep" />
         <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
