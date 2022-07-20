@@ -129,3 +129,5 @@ WA_HEADER = {
     "Authorization": "Bearer EABMCARdnUF8BAOlLzQujWwZA7dav0gQZCoRlJNACOwJpbxjYzc3S0Ef5ZCQ1ucXySJQw5cQ0kAxHT2xUbCPExlHhgaWee2vSjsmJrIVlOb1xgcavCRyTCksa0kRZCw9hiZArgqLu6YlNwE6Bo8gJ9jkfrR6qj46QNC0YaZCepSK8pEt46hi4ZC4gOf8ahLZCvRID4l1zQMxmgvMjvCsIdJ7f",
     "Content-Type": "application/json"
 }
+
+ACTIONS_URL = "https://gist.githubusercontent.com/parthp-7span/03fed9ab3a1c028db6fb69dafde36e49/raw/4f79a4a7f5d9c6d02147f8ee78c48192fb788fca/actions.json"

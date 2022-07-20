@@ -1,11 +1,13 @@
 import datetime as dt
 from secrets import compare_digest
 
+import requests
 from django.db.transaction import atomic, non_atomic_requests
 from django.http import HttpResponse, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.utils import timezone
+from django.conf import settings
 
 from webhook.models import WebhookMessage
 from webhook.func import *
@@ -14,8 +16,7 @@ from webhook.input_validator import *
 
 instance = Firebase()
 
-with open('webhook2/actions3.json', 'r') as f:
-    actions = json.load(f)
+actions = requests.get(settings.ACTIONS_URL).json()
 
 
 @csrf_exempt
