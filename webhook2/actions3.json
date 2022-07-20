@@ -1,5 +1,6 @@
 {
   "1": {
+    "name": "resume",
     "next": "2",
     "type": "text",
     "user_input": true,
