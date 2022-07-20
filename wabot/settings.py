@@ -75,10 +75,10 @@ WSGI_APPLICATION = 'wabot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'de5ku51srae4qm',
-        'USER': 'ggcsbnfpfgfvki',
-        'PASSWORD': '681a7ace9f99e828c9f9ba7d4ec87bbb8a9808e2567a89cf2b622f166c6b58d8',
-        'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com',
+        'NAME': 'd572fja18rvopt',
+        'USER': 'aeitkjmuoimnqf',
+        'PASSWORD': 'bf94e5bfb655390a4966359adb18917eb7fe0e0abd77f9985f5895ab5efad892',
+        'HOST': 'ec2-100-26-39-41.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
