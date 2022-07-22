@@ -55,3 +55,7 @@ def verify_float_number(data):
         return isinstance(float(data), float)
     except:
         return False
+
+
+def verify_text(data):
+    return True

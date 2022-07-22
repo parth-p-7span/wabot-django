@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json" />
+    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions using json">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wabot/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/input_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/input_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/actions2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook2/views.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +50,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/parthpanchal/Documents/Workspace/python/wabot-django/manage.py&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/parthpanchal/RND/python-android/tictactoe-voc&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;
   }
 }</component>
@@ -86,6 +102,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="temp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="wabot-django" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webhook2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webhook2/temp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tmep" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wabot-django" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,12 +167,14 @@
     </configuration>
     <list>
       <item itemvalue="Python.manage" />
+      <item itemvalue="Python.temp" />
       <item itemvalue="Python.views" />
       <item itemvalue="Python.tmep" />
       <item itemvalue="Python.input_validator" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.temp" />
         <item itemvalue="Python.input_validator" />
         <item itemvalue="Python.tmep" />
         <item itemvalue="Python.views" />

@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webhook.apps.WebhookConfig',
-    'webhook2.apps.Webhook2Config'
 ]
 
 MIDDLEWARE = [
@@ -79,7 +78,7 @@ DATABASES = {
         'USER': 'aeitkjmuoimnqf',
         'PASSWORD': 'bf94e5bfb655390a4966359adb18917eb7fe0e0abd77f9985f5895ab5efad892',
         'HOST': 'ec2-100-26-39-41.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'PORT': '5432'
     }
 }
 
