@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="code formatted">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/actions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/func.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/func.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/tmep.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/tmep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +45,7 @@
       <recent name="$PROJECT_DIR$/webhook2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tmep">
+  <component name="RunManager" selected="Python.manage">
     <configuration name="input_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wabot-django" />
       <option name="INTERPRETER_OPTIONS" value="" />

@@ -7,7 +7,7 @@ class Firebase:
     def __init__(self):
         database_url = "https://wa-bot-4eb4a-default-rtdb.asia-southeast1.firebasedatabase.app/"
         cred_obj = firebase_admin.credentials.Certificate(
-            './webhook/wa-bot-4eb4a-firebase-adminsdk-foyvr-96dbd6de2b.json')
+            '.wabot-django/webhook/wa-bot-4eb4a-firebase-adminsdk-foyvr-96dbd6de2b.json')
         default_app = firebase_admin.initialize_app(cred_obj, {
             'databaseURL': database_url
         })
