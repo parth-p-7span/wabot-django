@@ -102,18 +102,7 @@ def process_request(payload):
                     action_object = actions["1"]
                     is_starter = True
                 else:
-                    if users_data['action_type'] == "text":
-                        last_state = users_data['state']
-                        last_action_object = eval(last_state)
-                        for i in range(len(last_state) - 1, 0, -1):
-                            if last_state[i] == "[":
-                                action_location = last_state[:i]
-                                break
-                        if last_action_object["next"] == "end":
-                            return
-                        action_location += f'["{last_action_object["next"]}"]'
-                        action_object = eval(action_location)
-                    elif users_data['action_type'] == "interactive":
+                    if users_data['action_type'] == "interactive":
                         last_state = users_data['state']
                         last_action_object = eval(last_state)
                         for i in range(len(last_state) - 1, 0, -1):
@@ -124,6 +113,17 @@ def process_request(payload):
                         if last_action_object["next"] == "end":
                             return
                         action_location += f'["{last_action_object["next"][response_id]}"]'
+                        action_object = eval(action_location)
+                    else:
+                        last_state = users_data['state']
+                        last_action_object = eval(last_state)
+                        for i in range(len(last_state) - 1, 0, -1):
+                            if last_state[i] == "[":
+                                action_location = last_state[:i]
+                                break
+                        if last_action_object["next"] == "end":
+                            return
+                        action_location += f'["{last_action_object["next"]}"]'
                         action_object = eval(action_location)
 
                 if not is_starter:

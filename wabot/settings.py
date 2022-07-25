@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -125,7 +125,7 @@ WA_VERIFY_TOKEN = "23rf313uf-9du2bbc0-cj382nsd-nc238"
 WA_ENDPOINT = 'https://graph.facebook.com/v13.0/106519662119427/messages'
 
 WA_HEADER = {
-    "Authorization": "Bearer EABMCARdnUF8BAOlLzQujWwZA7dav0gQZCoRlJNACOwJpbxjYzc3S0Ef5ZCQ1ucXySJQw5cQ0kAxHT2xUbCPExlHhgaWee2vSjsmJrIVlOb1xgcavCRyTCksa0kRZCw9hiZArgqLu6YlNwE6Bo8gJ9jkfrR6qj46QNC0YaZCepSK8pEt46hi4ZC4gOf8ahLZCvRID4l1zQMxmgvMjvCsIdJ7f",
+    "Authorization": "Bearer EABMCARdnUF8BACps2sgDEVxR3BYl42YpnkllxNbq2N7iCk2ZCo0U0TY3KnZBYCHYMOu3vhZCGwqj7e4vndmqpyuvZCxWc1voUoBqOW8O3k4vRvZB63e59vD5guX1EFZAU6Ddy8yxnDaXF9lq6Emiqknl0hVEooZAZCOeIF2rYytXASs9TQSnPnHCDKRUHvG57eZA94TrfnOVFF6x35Bwvi8Ur",
     "Content-Type": "application/json"
 }
 
