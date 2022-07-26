@@ -43,22 +43,35 @@ res = requests.post(
     data=json.dumps({
         "messaging_product": "whatsapp",
         "to": "917227856454",
-        "type": "contacts",
-        "contacts": [
-            {
-                "name": {
-                    "formatted_name": "Customer Support",
-                    "first_name": "Parth"
-                },
-                "phones": [
+        "type": "interactive",
+
+        "interactive": {
+            "type": "button",
+            "body": {
+                "text": "Please select any one option from below buttons."
+            },
+            "footer": {
+                "text": "Seven Bot"
+            },
+            "action": {
+                "buttons": [
                     {
-                        "phone": "917227856454",
-                        "type": "WORK",
-                        'wa_id': "917227856454"
+                        "type": "reply",
+                        "reply": {
+                            "id": "1",
+                            "title": "Report Issue"
+                        }
+                    },
+                    {
+                        "type": "reply",
+                        "reply": {
+                            "id": "2",
+                            "title": "Contact Support Team"
+                        }
                     }
                 ]
             }
-        ]
+        }
     })
 )
 

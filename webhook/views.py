@@ -24,7 +24,6 @@ with open('webhook/actions.json', 'rb') as f:
 @non_atomic_requests
 def wa_webhook(request):
     params = request.GET.dict()
-    print("==> params", params)
     if 'hub.mode' in params and 'hub.verify_token' in params:
         if compare_digest(params['hub.mode'], 'subscribe') and compare_digest(params['hub.verify_token'],
                                                                               settings.WA_VERIFY_TOKEN):
@@ -42,28 +41,28 @@ def wa_webhook(request):
 
     payload = json.loads(request.body)
 
-    try:
-        message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
+    # try:
+    message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
 
-        if not WebhookMessage.objects.filter(message_id=message_id):
-            WebhookMessage.objects.create(
-                message_id=message_id,
-                received_at=timezone.now(),
-                payload=payload
-            )
-            process_request(payload)
-            return HttpResponse("Message received okay", status=200)
-        else:
-            return HttpResponseForbidden(
-                "Message already received",
-                content_type='text/plai n'
-            )
-    except Exception as e:
-        print("Exception == ", e)
-        return HttpResponseForbidden(
-            "Something went wrong",
-            content_type='text/plain'
+    if not WebhookMessage.objects.filter(message_id=message_id):
+        WebhookMessage.objects.create(
+            message_id=message_id,
+            received_at=timezone.now(),
+            payload=payload
         )
+        process_request(payload)
+        return HttpResponse("Message received okay", status=200)
+    else:
+        return HttpResponseForbidden(
+            "Message already received",
+            content_type='text/plai n'
+        )
+    # except Exception as e:
+    #     print("Exception == ", e)
+    #     return HttpResponseForbidden(
+    #         "Something went wrong",
+    #         content_type='text/plain'
+    #     )
 
 
 @atomic

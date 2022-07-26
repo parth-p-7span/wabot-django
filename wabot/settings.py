@@ -75,10 +75,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wabot',
-        # 'USER': 'root',  # LOCAL
-        'USER': 'forge',  # PRODUCTION
-        # 'PASSWORD': 'hitchhicker123',  # LOCAL
-        'PASSWORD': 'Sw0CaBLQKk8d32vJ0vLx',  # PRODUCTION
+        'USER': 'root',  # LOCAL
+        # 'USER': 'forge',  # PRODUCTION
+        'PASSWORD': 'hitchhicker123',  # LOCAL
+        # 'PASSWORD': 'Sw0CaBLQKk8d32vJ0vLx',  # PRODUCTION
         'HOST': 'localhost'
     }
 }
@@ -106,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Kolkata'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
