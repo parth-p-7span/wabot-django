@@ -24,6 +24,7 @@ with open('webhook/actions.json', 'rb') as f:
 @non_atomic_requests
 def wa_webhook(request):
     params = request.GET.dict()
+    print("==> params", params)
     if 'hub.mode' in params and 'hub.verify_token' in params:
         if compare_digest(params['hub.mode'], 'subscribe') and compare_digest(params['hub.verify_token'],
                                                                               settings.WA_VERIFY_TOKEN):
