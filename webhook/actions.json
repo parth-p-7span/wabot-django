@@ -53,6 +53,7 @@
     "type": "text",
     "user_input": true,
     "name": "user_issue",
+    "expected": "text",
     "child": {
       "text": {
         "body": "Please report your issue in a single message."

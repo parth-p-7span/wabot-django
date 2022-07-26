@@ -153,9 +153,10 @@ def process_request(payload):
                             new_action_location = action_location[:i]
                             break
                     print(last_action_object)
-                    if last_action_object != {}:
-                        if last_action_object["next"] == "end":
+                    if action_object != {}:
+                        if action_object["next"] == "end":
                             break
+                            # return
                     action_location = new_action_location + f'["{action_object["next"]}"]'
                     action_object = eval(action_location)
                     print(action_location, action_object)
