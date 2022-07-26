@@ -55,7 +55,7 @@ def wa_webhook(request):
         else:
             return HttpResponseForbidden(
                 "Message already received",
-                content_type='text/plai n'
+                content_type='text/plain'
             )
     except Exception as e:
         print("Exception == ", e)
