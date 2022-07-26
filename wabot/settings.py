@@ -75,8 +75,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wabot',
-        'USER': 'forge',
-        'PASSWORD': 'Sw0CaBLQKk8d32vJ0vLx',
+        # 'USER': 'root',        # LOCAL
+        'USER': 'forge',  # PRODUCTION
+        # 'PASSWORD': 'hitchhicker123',     # LOCAL
+        'PASSWORD': 'Sw0CaBLQKk8d32vJ0vLx',  # PRODUCTION
         'HOST': 'localhost'
     }
 }
@@ -124,7 +126,7 @@ WA_VERIFY_TOKEN = "23rf313uf-9du2bbc0-cj382nsd-nc238"
 WA_ENDPOINT = 'https://graph.facebook.com/v13.0/106519662119427/messages'
 
 WA_HEADER = {
-    "Authorization": "Bearer EABMCARdnUF8BACps2sgDEVxR3BYl42YpnkllxNbq2N7iCk2ZCo0U0TY3KnZBYCHYMOu3vhZCGwqj7e4vndmqpyuvZCxWc1voUoBqOW8O3k4vRvZB63e59vD5guX1EFZAU6Ddy8yxnDaXF9lq6Emiqknl0hVEooZAZCOeIF2rYytXASs9TQSnPnHCDKRUHvG57eZA94TrfnOVFF6x35Bwvi8Ur",
+    "Authorization": "Bearer EABMCARdnUF8BAPxl7TAbwaxOeXXp6iLwiM4s6OTlJqqF58CPZCsBhiW2fxsowrxo4GSwPp7meHzmmTHgOGM8fo4sWxeT0E2HaUecNejdKj45SmGOTUlETyyFHR3HwqbesZCglIFgmZAvlsZAHuy7mtx9Y2AOZClsjrMYpsM8bbW6MU755jw30AIvgXZCj9HFTGsp1sqCGIX6fM7BVakINR",
     "Content-Type": "application/json"
 }
 

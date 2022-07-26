@@ -7,12 +7,16 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.utils import timezone
 
-from webhook.models import WebhookMessage
+from webhook.models import *
 from webhook.func import *
 from webhook.firebase import Firebase
 from webhook.input_validator import *
+from webhook.operations import *
 
-instance = Firebase()
+# instance = Firebase()
+
+with open('webhook/actions.json', 'rb') as f:
+    actions = json.load(f)
 
 
 @csrf_exempt
@@ -37,28 +41,28 @@ def wa_webhook(request):
 
     payload = json.loads(request.body)
 
-    try:
-        message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
+    # try:
+    message_id = payload['entry'][0]['changes'][0]['value']['messages'][0]['id']
 
-        if not WebhookMessage.objects.filter(message_id=message_id):
-            WebhookMessage.objects.create(
-                message_id=message_id,
-                received_at=timezone.now(),
-                payload=payload
-            )
-            process_request(payload)
-            return HttpResponse("Message received okay", status=200)
-        else:
-            return HttpResponseForbidden(
-                "Message already received",
-                content_type='text/plain'
-            )
-    except Exception as e:
-        print("Exception == ", e)
-        return HttpResponseForbidden(
-            "Something went wrong",
-            content_type='text/plain'
+    if not WebhookMessage.objects.filter(message_id=message_id):
+        WebhookMessage.objects.create(
+            message_id=message_id,
+            received_at=timezone.now(),
+            payload=payload
         )
+        process_request(payload)
+        return HttpResponse("Message received okay", status=200)
+    else:
+        return HttpResponseForbidden(
+            "Message already received",
+            content_type='text/plai n'
+        )
+    # except Exception as e:
+    #     print("Exception == ", e)
+    #     return HttpResponseForbidden(
+    #         "Something went wrong",
+    #         content_type='text/plain'
+    #     )
 
 
 @atomic
@@ -69,7 +73,7 @@ def process_request(payload):
         message_product = message_value['messaging_product']
         if message_product == 'whatsapp':
             if 'messages' in message_value:
-                actions = requests.get(settings.ACTIONS_URL).json()
+                # actions = requests.get(settings.ACTIONS_URL).json()
 
                 author_name = message_value['contacts'][0]['profile']['name']
                 message_object = message_value['messages'][0]
@@ -91,19 +95,25 @@ def process_request(payload):
 
                 mark_as_read(message_id)
 
-                users_data = instance.get_state(user_id)
+                # users_data = instance.get_state(user_id)
+                if not UserState.objects.filter(user_id=user_id):
+                    users_data = None
+                else:
+                    users_data = UserState.objects.get(user_id=user_id)
+
                 action_location = ""
                 action_object = {}
                 last_action_object = {}
                 is_starter = False
                 if users_data is None:
-                    instance.create_user(user_id, author_name)
+                    # instance.create_user(user_id, author_name)
+                    create_user(user_id, author_name)
                     action_location = 'actions["1"]'
                     action_object = actions["1"]
                     is_starter = True
                 else:
-                    if users_data['action_type'] == "interactive":
-                        last_state = users_data['state']
+                    if users_data.action_type == "interactive":
+                        last_state = users_data.state
                         last_action_object = eval(last_state)
                         for i in range(len(last_state) - 1, 0, -1):
                             if last_state[i] == "[":
@@ -115,7 +125,7 @@ def process_request(payload):
                         action_location += f'["{last_action_object["next"][response_id]}"]'
                         action_object = eval(action_location)
                     else:
-                        last_state = users_data['state']
+                        last_state = users_data.state
                         last_action_object = eval(last_state)
                         for i in range(len(last_state) - 1, 0, -1):
                             if last_state[i] == "[":
@@ -128,7 +138,9 @@ def process_request(payload):
 
                 if not is_starter:
                     if verify_data(last_action_object['expected'], message_text):
-                        instance.update_user(user_id, field_name=last_action_object['name'], field_value=message_text)
+                        # instance.update_user(user_id, field_name=last_action_object['name'], field_value=message_text)
+                        update_user(user_id, field_name=last_action_object['name'], field_value=message_text)
+
                     else:
                         send_validation_error(user_id)
                         return
@@ -149,7 +161,8 @@ def process_request(payload):
                     print(action_location, action_object)
                     send_message(user_id, action_object)
 
-                instance.update_state(user_id, state=action_location, action_type=action_object['type'])
+                # instance.update_state(user_id, state=action_location, action_type=action_object['type'])
+                update_state(user_id, state=action_location, action_type=action_object['type'])
 
 
 def verify_data(expected, data):

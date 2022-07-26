@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="database changed" />
+    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="psycopg2 removed from requirements.txt">
+      <change afterPath="$PROJECT_DIR$/webhook/operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/actions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/func.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/func.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/tmep.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/tmep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +52,7 @@
       <recent name="$PROJECT_DIR$/webhook2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="RunManager" selected="Python.tmep">
     <configuration name="input_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wabot-django" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -230,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658752735575</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="psycopg2 removed from requirements.txt">
+      <created>1658753866150</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658753866150</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +265,7 @@
     <MESSAGE value="code formatted" />
     <MESSAGE value="firebase cred file location updated" />
     <MESSAGE value="database changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="database changed" />
+    <MESSAGE value="psycopg2 removed from requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="psycopg2 removed from requirements.txt" />
   </component>
 </project>
