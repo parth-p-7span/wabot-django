@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="local database integrated">
+    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="checking params">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webhook/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +254,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658815509346</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="checking params">
+      <created>1658815887566</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1658815887566</updated>
+    </task>
+    <task id="LOCAL-00013" summary="checking params">
+      <created>1658815925932</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1658815925932</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -276,6 +289,7 @@
     <MESSAGE value="database changed" />
     <MESSAGE value="psycopg2 removed from requirements.txt" />
     <MESSAGE value="local database integrated" />
-    <option name="LAST_COMMIT_MESSAGE" value="local database integrated" />
+    <MESSAGE value="checking params" />
+    <option name="LAST_COMMIT_MESSAGE" value="checking params" />
   </component>
 </project>

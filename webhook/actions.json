@@ -114,6 +114,7 @@
     "next": "8",
     "type": "text",
     "user_input": true,
+    "name": "company",
     "expected": "text",
     "child": {
       "text": {
