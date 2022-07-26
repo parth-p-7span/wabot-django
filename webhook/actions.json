@@ -85,23 +85,21 @@
     "type": "contacts",
     "user_input": false,
     "child": {
-      "text": {
-        "contacts": [
-          {
-            "name": {
-              "formatted_name": "Customer Support",
-              "first_name": "Parth"
-            },
-            "phones": [
-              {
-                "phone": "917227856454",
-                "type": "WORK",
-                "wa_id": "917227856454"
-              }
-            ]
-          }
-        ]
-      }
+      "contacts": [
+        {
+          "name": {
+            "formatted_name": "Customer Support",
+            "first_name": "Parth"
+          },
+          "phones": [
+            {
+              "phone": "917227856454",
+              "type": "WORK",
+              "wa_id": "917227856454"
+            }
+          ]
+        }
+      ]
     }
   }
 }
