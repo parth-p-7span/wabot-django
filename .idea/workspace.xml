@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="checking params">
+    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="actions file name issue solved">
+      <change afterPath="$PROJECT_DIR$/webhook/new_actions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/actions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/tmep.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/tmep.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
       <recent name="$PROJECT_DIR$/webhook2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="RunManager" selected="Python.tmep">
     <configuration name="input_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="wabot-django" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -268,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658815925932</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="actions file name issue solved">
+      <created>1658816841797</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1658816841797</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +299,7 @@
     <MESSAGE value="psycopg2 removed from requirements.txt" />
     <MESSAGE value="local database integrated" />
     <MESSAGE value="checking params" />
-    <option name="LAST_COMMIT_MESSAGE" value="checking params" />
+    <MESSAGE value="actions file name issue solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="actions file name issue solved" />
   </component>
 </project>

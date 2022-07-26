@@ -21,19 +21,44 @@ import wabot.settings as s
 #
 # print(response.text)
 
+# res = requests.post(
+#     s.WA_ENDPOINT,
+#     headers=s.WA_HEADER,
+#     data=json.dumps({
+#         "messaging_product": "whatsapp",
+#         "to": "918780495804",
+#         "type": "image",
+#         "image": {
+#             "link": "https://appsumo2-cdn.appsumo.com/media/deals/images/as-web-Vepaar.png",
+#             "provider": {
+#                 "name": "7Span"
+#             }
+#         }
+#     })
+# )
+
 res = requests.post(
     s.WA_ENDPOINT,
     headers=s.WA_HEADER,
     data=json.dumps({
         "messaging_product": "whatsapp",
-        "to": "918780495804",
-        "type": "image",
-        "image": {
-            "link": "https://appsumo2-cdn.appsumo.com/media/deals/images/as-web-Vepaar.png",
-            "provider": {
-                "name": "7Span"
+        "to": "917227856454",
+        "type": "contacts",
+        "contacts": [
+            {
+                "name": {
+                    "formatted_name": "Customer Support",
+                    "first_name": "Parth"
+                },
+                "phones": [
+                    {
+                        "phone": "917227856454",
+                        "type": "WORK",
+                        'wa_id': "917227856454"
+                    }
+                ]
             }
-        }
+        ]
     })
 )
 
