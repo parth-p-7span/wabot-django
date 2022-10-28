@@ -19,7 +19,6 @@ class Firebase:
                 "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
                 "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-foyvr%40wa-bot-4eb4a.iam.gserviceaccount.com"
             }
-
         )
         default_app = firebase_admin.initialize_app(cred_obj, {
             'databaseURL': database_url

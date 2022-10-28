@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="end message issue solved">
+    <list default="true" id="e183f4ec-c245-4fec-aac2-6960a2572148" name="Changes" comment="buf in contact actions solved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wabot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wabot/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webhook/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/actions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webhook/firebase.py" beforeDir="false" afterPath="$PROJECT_DIR$/webhook/firebase.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,11 +155,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.input_validator" />
       <item itemvalue="Python.manage" />
       <item itemvalue="Python.temp" />
-      <item itemvalue="Python.views" />
       <item itemvalue="Python.tmep" />
-      <item itemvalue="Python.input_validator" />
+      <item itemvalue="Python.views" />
     </list>
     <recent_temporary>
       <list>
@@ -311,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658829837659</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="buf in contact actions solved">
+      <created>1658830363384</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1658830363384</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -337,6 +345,7 @@
     <MESSAGE value="actions flow changed" />
     <MESSAGE value="actions.json updated" />
     <MESSAGE value="end message issue solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="end message issue solved" />
+    <MESSAGE value="buf in contact actions solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="buf in contact actions solved" />
   </component>
 </project>
