@@ -5,6 +5,13 @@ using [WhatsApp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-a
 
 ---
 
+
+## Prerequisite
+
+- Python3
+- Django
+- JSON
+
 ## Installation
 
 ### Setup firebase
